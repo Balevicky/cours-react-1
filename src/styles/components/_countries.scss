@@ -1,11 +1,13 @@
 .countries {
   text-align: center;
+ 
 
   .radio-container {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
     background: $color-3;
+    margin: 10px auto;
     border-radius: 20px;
     padding: 10px;
     color: $white;
@@ -16,20 +18,23 @@
     }
 
     label {
-      margin-left: 10px;
+      margin-left: 2px;
+      margin-right: 6px;
       cursor: pointer;
     }
   }
   input[type="text"] {
+    // margin: 10px auto;
     padding: 10px;
-    border-radius: 40px;
-    font-size: 1.3rem;
+    border-radius: 20px;
+    font-size: 1rem;
     border: 3px solid $color-1;
     outline: none;
     transition: 0.4s;
     text-align: center;
-    width: 400px;
-    margin-bottom: 20px;
+    
+    min-width:250px;
+    margin: 10px;
 
     &:focus {
       background: $color-1;
@@ -37,16 +42,20 @@
       color: $white;
     }
   }
+  input[type="range"] {
+    max-width: 40px;
+  }
 
-  button {
-    margin: 0 auto 20px;
-    background: none;
+  .button {
+    margin: 0 auto;
+    background: $white;
     border: 2px solid $color-1;
     padding: 4px 10px;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
 
+    font-size: 1rem;
     &:hover {
       background: $color-1;
     }
@@ -56,5 +65,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  
+  }
+  #radiocontainer{
+  justify-content: space-around;
   }
 }

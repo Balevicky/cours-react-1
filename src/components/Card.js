@@ -1,17 +1,16 @@
 import React from "react";
-// ({ country })=props.country
-const Card = ({ country }) => {
-  console.log(country);
-
+// ({ countri })=props.countri
+const Card = ({ countri }) => {
   return (
     <li className="card">
       <img
-        src={country.flags.svg}
-        alt={"Drapeau de" + country.translations.fra.common}
+        src={countri.flags.svg}
+        alt={"Drapeau de" + countri.translations.fra.common}
       />
       <div className="infos">
-        <h2>{country.translations.fra.common}</h2>
-        <span>Population: {country.population.toLocaleString()}</span>
+        <h2>{countri.translations.fra.common}</h2>
+        <h4>{countri.capital} </h4>
+        <span>Pop: {countri.population.toLocaleString()}</span>
       </div>
     </li>
   );
