@@ -110,7 +110,7 @@ const Countries = () => {
                 b.translations.fra.common
               );
             } else {
-              return;
+            return a.population - b.population;
             }
           })
           .filter((country) =>
