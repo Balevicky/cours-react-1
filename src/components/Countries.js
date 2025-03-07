@@ -30,8 +30,8 @@ const Countries = () => {
           defaultValue={rangeValue}
           onChange={(e) => setRangeValue(e.target.value)}
         />
-        {/* <br />
-        <span>{rangeValue}</span> */}
+        {/* <br /> */}
+        <span>{rangeValue}</span>
         {radio.map((continent, index) => (
           <li key={index}>
             <input
@@ -44,45 +44,53 @@ const Countries = () => {
             <label htmlFor={continent}>{continent}</label>
           </li>
         ))}
-        <input
-          type="text"
-          placeholder="Rechercher par nom du pays"
-          defaultValue={inputValue}
-          onInput={(e) => setInputValue(e.target.value.toUpperCase())}
-        />
-        <input
-          type="submit"
-          id="minToMax"
-          value="Tri croissant"
-          className="button"
-          onClick={(e) => {
-            setTriCroissant(e.target.id);
-            setTriDcroissant("");
-            setTriAlphabétique("");
-          }}
-        />
-        <input
-          type="submit"
-          id="maxToMin"
-          value="Tri décroissant"
-          className="button"
-          onClick={(e) => {
-            setTriDcroissant(e.target.id);
-            setTriAlphabétique("");
-            setTriCroissant("");
-          }}
-        />
-        <input
-          type="submit"
-          id="alpha"
-          value="Tri Alphabétique"
-          className="button"
-          onClick={(e) => {
-            setTriAlphabétique(e.target.id);
-            setTriCroissant("");
-            setTriDcroissant("");
-          }}
-        />
+        <li>
+          <input
+            type="text"
+            placeholder="Rechercher par nom du pays"
+            defaultValue={inputValue}
+            onInput={(e) => setInputValue(e.target.value.toUpperCase())}
+          />
+        </li>
+        <li>
+          <input
+            type="submit"
+            id="minToMax"
+            value="Tri croissant"
+            className="button"
+            onClick={(e) => {
+              setTriCroissant(e.target.id);
+              setTriDcroissant("");
+              setTriAlphabétique("");
+            }}
+          />
+        </li>
+        <li>
+          <input
+            type="submit"
+            id="maxToMin"
+            value="Tri décroissant"
+            className="button"
+            onClick={(e) => {
+              setTriDcroissant(e.target.id);
+              setTriAlphabétique("");
+              setTriCroissant("");
+            }}
+          />
+        </li>
+        <li>
+          <input
+            type="submit"
+            id="alpha"
+            value="Tri Alphabétique"
+            className="button"
+            onClick={(e) => {
+              setTriAlphabétique(e.target.id);
+              setTriCroissant("");
+              setTriDcroissant("");
+            }}
+          />
+        </li>
       </ul>
       {selectedRadio && (
         <button onClick={() => setSelectedRadio("")}>
@@ -101,6 +109,8 @@ const Countries = () => {
               return a.translations.fra.common.localeCompare(
                 b.translations.fra.common
               );
+            } else {
+              return;
             }
           })
           .filter((country) =>
