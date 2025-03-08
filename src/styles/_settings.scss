@@ -9,7 +9,7 @@ $color-1: #61dafb;
 $color-2: salmon;
 $color-3: #282c34;
 $white: rgb(243, 243, 243);
-
+ 
 @mixin verticalCenter {
   display: flex;
   justify-content: center;
@@ -20,6 +20,7 @@ $white: rgb(243, 243, 243);
   padding: 0;
   margin: 10;
   box-sizing: border-box;
+  
 }
 
 body {

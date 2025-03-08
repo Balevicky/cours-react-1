@@ -6,7 +6,6 @@ import Articles from "../components/Articles";
 
 const Blog = () => {
   const [blogData, setBlogData] = useState([]);
-
   const [content, setContent] = useState("");
   const [error, setError] = useState(false);
   const [errorName, setErrorName] = useState(false);
@@ -19,7 +18,7 @@ const Blog = () => {
   };
   useEffect(() => getData(), []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (content.length < 140 || content === "") {
       setError(true);
@@ -36,7 +35,7 @@ const Blog = () => {
       console.log(error, errorName);
       alert("veuillez remplir correctement les champs");
     } else {
-      axios.post("http://localhost:3004/articles", {
+      await axios.post("http://localhost:3004/articles", {
         author,
         content,
         date: Date.now(),
